@@ -59,10 +59,17 @@ namespace ApiClient
            
         }
 
-        static RestResponse GetRestResponse (IRestRequest restRequest)
+        static string GetRestResponse (IRestRequest restRequest)
         {
-            
-            return null;
+            IRestResponse response = restClient.Execute(restRequest);
+            if(response.ErrorException != null)
+            {
+                const string message = "Error retrievíng response. Check inner details for more info";
+                var ApiException = new ApplicationException(message, response.ErrorException);
+                throw ApiException;
+            }
+
+            return response.Content;
         }
     }
 }
