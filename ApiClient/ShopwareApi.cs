@@ -5,17 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Authenticators;
-using RestSharp.Serializers;
-using RestSharp.Deserializers;
+using ApiClient.Resources;
 
 namespace ApiClient
 {
-    class ShopwareApi
+    public class ShopwareApi
     {
         private string url;
         private string username;
         private string apiKey;
         private RestClient client;
+
+        private ArticleResource articleResource;
+        private CategoryResource categoryResource;
+        private OrderResource orderResource;
 
         public ShopwareApi(string url, string username, string apiKey)
         {
@@ -25,6 +28,33 @@ namespace ApiClient
 
             this.client = new RestClient(url);
             client.Authenticator = new HttpBasicAuthenticator(username, apiKey);
+        }
+
+        public ArticleResource GetArticleResource()
+        {
+            if(this.articleResource == null)
+            {
+                this.articleResource = new ArticleResource(this.client);
+            }
+            return this.articleResource;
+        }
+
+        public CategoryResource GetCategoryResource()
+        {
+            if(this.categoryResource == null)
+            {
+                this.categoryResource = new CategoryResource(this.client);
+            }
+            return this.categoryResource;
+        }
+
+        public OrderResource GetOrderResource()
+        {
+            if(this.categoryResource == null)
+            {
+                this.orderResource = new OrderResource(this.client);
+            }
+            return this.orderResource;
         }
     }
 }
