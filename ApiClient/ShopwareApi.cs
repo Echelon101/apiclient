@@ -12,33 +12,19 @@ namespace ApiClient
 {
     class ShopwareApi
     {
-        string BaseUrl = null;
+        private string url;
+        private string username;
+        private string apiKey;
+        private RestClient client;
 
-        readonly string _username;
-        readonly string _secretKey;
-
-        public ShopwareApi(string baseUrl, string username, string secretKey)
+        public ShopwareApi(string url, string username, string apiKey)
         {
-            BaseUrl = baseUrl;
-            _username = username;
-            _secretKey = secretKey;
-        }
+            this.url = url;
+            this.username = username;
+            this.apiKey = apiKey;
 
-        public T Execute<T>(RestRequest request) where T : new()
-        {
-            var client = new RestClient();
-            client.BaseUrl = new System.Uri(BaseUrl);
-            client.Authenticator = new HttpBasicAuthenticator(_username, _secretKey);
-
-            var response = client.Execute<T>(request);
-
-            if(response.ErrorException != null)
-            {
-                const string message = "Error retrieving response. Check inner details for more info";
-                var shopwareException = new ApplicationException(message, response.ErrorException);
-                throw shopwareException;
-            }
-            return response.Data;
+            this.client = new RestClient(url);
+            client.Authenticator = new HttpBasicAuthenticator(username, apiKey);
         }
     }
 }
