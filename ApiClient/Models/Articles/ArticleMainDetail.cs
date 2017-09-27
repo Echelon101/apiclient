@@ -15,7 +15,7 @@ namespace ApiClient.Models.Articles
         public string supplierNumber;
         public int kind;
         public string additionalText;
-        public int active;
+        public bool active;
         public int inStock;
         public int stockMin;
         public string weight;
