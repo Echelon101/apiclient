@@ -17,6 +17,7 @@ namespace ShopwareApi.Models.Articles
         public int? priceGroupId;
         public int? filterGroupId;
         public int? configuratorSetId;
+        public int? supplierId;
 
         public string name;
         public string description;

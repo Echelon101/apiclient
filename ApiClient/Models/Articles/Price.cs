@@ -8,15 +8,15 @@ namespace ShopwareApi.Models.Articles
 {
     public class Price
     {
-        private int id;
-        private int articleId;
-        private int articleDetailsId;
-        private string customerGroupKey;
-        private float from;
-        private string to;
-        private float price;
-        private float pseudoPrice;
-        private float basePrice;
-        private float percent;
+        public int id;
+        public int articleId;
+        public int articleDetailsId;
+        public string customerGroupKey;
+        public float from;
+        public string to;
+        public float price;
+        public float pseudoPrice;
+        public float basePrice;
+        public float percent;
     }
 }

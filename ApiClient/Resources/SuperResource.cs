@@ -13,11 +13,11 @@ namespace ShopwareApi.Resources
     {
         protected String resourceUrl;
 
-        protected IRestClient client { get; set; }
+        protected IRestClient Client { get; set; }
 
         public SuperResource(IRestClient client)
         {
-            this.client = client;
+            this.Client = client;
         }
 
         public TResponse Get(int id)
@@ -35,17 +35,35 @@ namespace ShopwareApi.Resources
 
         public TResponse Get(string id)
         {
-            ApiResponse<TResponse> response = convertResponseStringToObject<TResponse>(this.ExecuteGet(id));
+            ApiResponse<TResponse> response = ConvertResponseStringToObject<TResponse>(this.ExecuteGet(id));
             if (!response.success)
             {
                 throw new Exception(response.message);
             }
             return response.data;
         }
+        public string GetJsonResponse(int id)
+        {
+            try
+            {
+                return this.GetJsonResponse(id.ToString());
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public string GetJsonResponse(string id)
+        {
+            string response = this.ExecuteGet(id);
+            Debug.WriteLine(response);
+            return response;
+        }
 
         public List<TResponse> GetAll()
         {
-            ApiResponse<List<TResponse>> response = convertResponseStringToObject<List<TResponse>>(ExecuteGetAll());
+            ApiResponse<List<TResponse>> response = ConvertResponseStringToObject<List<TResponse>>(ExecuteGetAll());
             if (!response.success)
             {
                 throw new Exception(response.message);
@@ -68,7 +86,7 @@ namespace ShopwareApi.Resources
             String response = this.ExecuteDelete(id);
         }
 
-        protected ApiResponse<A> convertResponseStringToObject<A>(string responseString)
+        protected ApiResponse<A> ConvertResponseStringToObject<A>(string responseString)
         {
             return JsonConvert.DeserializeObject<ApiResponse<A>>(responseString, new JsonSerializerSettings
             {
@@ -140,7 +158,7 @@ namespace ShopwareApi.Resources
             }
 
             request.AddParameter("application/json; charset=utf8", body, ParameterType.RequestBody);
-            IRestResponse response = client.Execute(request);
+            IRestResponse response = Client.Execute(request);
 
             if (response.ErrorException != null)
             {

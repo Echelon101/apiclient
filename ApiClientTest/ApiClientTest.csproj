@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApiClient\ShopwareApi.csproj">
+      <Project>{7ce1bfdb-cbed-495f-8693-d54a430042c7}</Project>
+      <Name>ShopwareApi</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

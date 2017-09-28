@@ -22,7 +22,7 @@ namespace ShopwareApi.Resources
             ApiRequest request = new ApiRequest(this.resourceUrl, Method.GET);
             ApiRequestExecutor executor = new ApiRequestExecutor();
 
-            ApiResponse<List<Category>> response = executor.Execute<List<Category>>(client, request);
+            ApiResponse<List<Category>> response = executor.Execute<List<Category>>(Client, request);
 
             Debug.WriteLine("New Method used!");
 

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
-using RestSharp.Authenticators;
+using ShopwareApi.Authenticators;
 using ShopwareApi.Resources;
 
 namespace ShopwareApi
 {
-    public class ShopwareApi
+    public class ShopwareClient
     {
         private string url;
         private string username;
@@ -21,14 +21,15 @@ namespace ShopwareApi
         private OrderResource orderResource;
         private CustomerResource customerResource;
 
-        public ShopwareApi(string url, string username, string apiKey)
+        public ShopwareClient(string url, string username, string apiKey)
         {
             this.url = url;
             this.username = username;
             this.apiKey = apiKey;
 
             this.client = new RestClient(url);
-            client.Authenticator = new HttpBasicAuthenticator(username, apiKey);
+            client.Authenticator = new DigestAuthenticator(username, apiKey);
+            
         }
 
         public ArticleResource GetArticleResource()
@@ -66,5 +67,7 @@ namespace ShopwareApi
             }
             return this.customerResource;
         }
+
     }
+
 }
