@@ -19,6 +19,7 @@ namespace ShopwareApi
         private ArticleResource articleResource;
         private CategoryResource categoryResource;
         private OrderResource orderResource;
+        private CustomerResource customerResource;
 
         public ShopwareApi(string url, string username, string apiKey)
         {
@@ -55,6 +56,15 @@ namespace ShopwareApi
                 this.orderResource = new OrderResource(this.client);
             }
             return this.orderResource;
+        }
+
+        public CustomerResource GetCustomerResource()
+        {
+            if(this.customerResource == null)
+            {
+                this.customerResource = new CustomerResource(this.client);
+            }
+            return this.customerResource;
         }
     }
 }
