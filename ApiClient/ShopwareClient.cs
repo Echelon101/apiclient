@@ -29,7 +29,7 @@ namespace ShopwareApi
 
             this.client = new RestClient(url);
             client.Authenticator = new DigestAuthenticator(username, apiKey);
-            
+            client.UserAgent = "ShopwareApiClient v1.0";
         }
 
         public ArticleResource GetArticleResource()

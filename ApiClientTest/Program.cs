@@ -16,7 +16,8 @@ namespace ApiClient
         static void Main(string[] args)
         {
             shopwareClient =  new ShopwareClient("http://localhost/shop/api", "apiuser", "ag5tA9KQVKwF1ANVJPFBplLVgSFarIvKFbWih69V");
-
+            
+            /*
             Thread tid1 = new Thread(new ThreadStart(Thread1));
             Thread tid2 = new Thread(new ThreadStart(Thread2));
             Thread tid3 = new Thread(new ThreadStart(Thread3));
@@ -28,7 +29,9 @@ namespace ApiClient
             tid3.Start();
             tid4.Start();
             tid5.Start();
+            */
 
+            ArticleMain article = shopwareClient.GetArticleResource().Get(5000);
 
             Console.WriteLine("done");
             Console.ReadKey();
