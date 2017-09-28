@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using ApiClient.Models.Articles;
+using ShopwareApi.Models.Articles;
 
-namespace ApiClient.Resources
+namespace ShopwareApi.Resources
 {
     public interface IArticleResource
     {

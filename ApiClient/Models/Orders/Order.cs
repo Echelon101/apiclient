@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiClient.Models.Orders
+namespace ShopwareApi.Models.Orders
 {
     public class Order
     {

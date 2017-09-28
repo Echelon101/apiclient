@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiClient.Models.Articles
+namespace ShopwareApi.Models.Articles
 {
     public class Price
     {

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace ApiClient.Resources
+namespace ShopwareApi.Resources
 {
     public abstract class SuperResource<TResponse>
     {

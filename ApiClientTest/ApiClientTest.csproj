@@ -48,11 +48,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ApiClient\ApiClient.csproj">
-      <Project>{6cc11a60-6a35-44e9-9b8b-5efbb4058c1e}</Project>
-      <Name>ApiClient</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

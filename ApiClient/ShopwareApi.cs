@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Authenticators;
-using ApiClient.Resources;
+using ShopwareApi.Resources;
 
-namespace ApiClient
+namespace ShopwareApi
 {
     public class ShopwareApi
     {

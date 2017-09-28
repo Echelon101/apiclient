@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ApiClient.Models.Articles;
-using ApiClient.Models.Categories;
-using ApiClient.Models.Translations;
+using ShopwareApi.Models.Articles;
+using ShopwareApi.Models.Categories;
+using ShopwareApi.Models.Translations;
 
-namespace ApiClient.Models.Articles
+namespace ShopwareApi.Models.Articles
 {
     public class ArticleMain
     {

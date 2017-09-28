@@ -7,7 +7,7 @@ using RestSharp;
 using System.Diagnostics;
 using Newtonsoft.Json;
 
-namespace ApiClient
+namespace ShopwareApi
 {
     public class ApiRequestExecutor
     {

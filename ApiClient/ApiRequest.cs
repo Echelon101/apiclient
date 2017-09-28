@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
 
-namespace ApiClient
+namespace ShopwareApi
 {
     public class ApiRequest
     {

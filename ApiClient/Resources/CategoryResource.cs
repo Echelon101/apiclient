@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ApiClient.Models.Categories;
+using ShopwareApi.Models.Categories;
 using RestSharp;
 using System.Diagnostics;
 
-namespace ApiClient.Resources
+namespace ShopwareApi.Resources
 {
     public class CategoryResource : SuperResource<Category>, ICategoryResource
     {

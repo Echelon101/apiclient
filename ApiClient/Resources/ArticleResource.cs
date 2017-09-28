@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ApiClient.Models.Articles;
+using ShopwareApi.Models.Articles;
 using RestSharp;
 
-namespace ApiClient.Resources
+namespace ShopwareApi.Resources
 {
     public class ArticleResource : SuperResource<ArticleMain>, IArticleResource
     {

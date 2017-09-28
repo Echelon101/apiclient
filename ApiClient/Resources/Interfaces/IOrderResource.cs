@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ApiClient.Models.Orders;
+using ShopwareApi.Models.Orders;
 
-namespace ApiClient.Resources
+namespace ShopwareApi.Resources
 {
     public interface IOrderResource
     {
