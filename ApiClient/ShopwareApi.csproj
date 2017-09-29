@@ -71,22 +71,28 @@
     <Compile Include="Models\Articles\Supplier.cs" />
     <Compile Include="Models\Articles\Tax.cs" />
     <Compile Include="Models\Categories\Category.cs" />
+    <Compile Include="Models\Countries\Country.cs" />
     <Compile Include="Models\Customers\Customer.cs" />
     <Compile Include="Models\Media\Media.cs" />
     <Compile Include="Models\Orders\Order.cs" />
     <Compile Include="Models\Translations\Translation.cs" />
+    <Compile Include="Models\Version\Version.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\ArticleResource.cs" />
     <Compile Include="Resources\CategoryResource.cs" />
+    <Compile Include="Resources\CountryResource.cs" />
     <Compile Include="Resources\CustomerResource.cs" />
     <Compile Include="Resources\Interfaces\IArticleResource.cs" />
     <Compile Include="Resources\Interfaces\ICategoryResource.cs" />
+    <Compile Include="Resources\Interfaces\ICountryResource.cs" />
     <Compile Include="Resources\Interfaces\ICustomerResource.cs" />
     <Compile Include="Resources\Interfaces\IMediaResource.cs" />
     <Compile Include="Resources\Interfaces\IOrderResource.cs" />
+    <Compile Include="Resources\Interfaces\IVersionResource.cs" />
     <Compile Include="Resources\MediaResource.cs" />
     <Compile Include="Resources\OrderResource.cs" />
     <Compile Include="Resources\SuperResource.cs" />
+    <Compile Include="Resources\VersionResource.cs" />
     <Compile Include="ShopwareClient.cs" />
   </ItemGroup>
   <ItemGroup>

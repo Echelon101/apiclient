@@ -20,6 +20,16 @@ namespace ShopwareApi.Resources
             this.Client = client;
         }
 
+        public TResponse Get()
+        {
+            ApiResponse<TResponse> response = ConvertResponseStringToObject<TResponse>(this.ExecuteGetAll());
+            if (!response.success)
+            {
+                throw new Exception(response.message);
+            }
+            return response.data;
+        }
+
         public TResponse Get(int id)
         {
             try
