@@ -16,10 +16,18 @@ namespace ShopwareApi
         private string apiKey;
         private RestClient client;
 
-        private ArticleResource articleResource;
-        private CategoryResource categoryResource;
-        private OrderResource orderResource;
-        private CustomerResource customerResource;
+        private ArticleResource articleResource; //implemented
+        private CategoryResource categoryResource; //implemented
+        private OrderResource orderResource; //implemented
+        private CustomerResource customerResource; //implemented
+        private VersionResource versionResource; //implemented
+        private CacheResource cacheResource; //implemented
+        private AddressResource addressResource; //implemented
+        private CustomerGroupResource customerGroupResource; //implemented
+        private GenerateArticleImage generateArticleImage; 
+        private CountryResource countryResource; //implemented
+        private MediaResource mediaResource; //implemented
+        private SupplierResource supplierResource; //implemented
 
         public ShopwareClient(string url, string username, string apiKey)
         {
@@ -68,6 +76,68 @@ namespace ShopwareApi
             return this.customerResource;
         }
 
+        public VersionResource GetVersionResource()
+        {
+            if(this.versionResource == null)
+            {
+                this.versionResource = new VersionResource(this.client);
+            }
+            return this.versionResource;
+        }
+
+        public CacheResource GetCacheResource()
+        {
+            if(this.cacheResource == null)
+            {
+                this.cacheResource = new CacheResource(this.client);
+            }
+            return this.cacheResource;
+        }
+
+        public CustomerGroupResource GetCustomerGroupResource()
+        {
+            if (this.customerGroupResource == null)
+            {
+                this.customerGroupResource = new CustomerGroupResource(this.client);
+            }
+            return this.customerGroupResource;
+        }
+
+        public AddressResource GetAddressResource()
+        {
+            if(this.addressResource == null)
+            {
+                this.addressResource = new AddressResource(this.client);
+            }
+            return this.addressResource;
+        }
+
+        public MediaResource GetMediaResource()
+        {
+            if(this.mediaResource == null)
+            {
+                this.mediaResource = new MediaResource(this.client);
+            }
+            return this.mediaResource;
+        }
+
+        public CountryResource GetCountryResource()
+        {
+            if(this.countryResource == null)
+            {
+                this.countryResource = new CountryResource(this.client);
+            }
+            return this.countryResource;
+        }
+
+        public SupplierResource GetSupplierResource()
+        {
+            if(this.supplierResource == null)
+            {
+                this.supplierResource = new SupplierResource(this.client);
+            }
+            return this.supplierResource;
+        }
     }
 
 }
