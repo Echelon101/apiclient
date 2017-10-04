@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ShopwareApi.Models.Articles;
 using ShopwareApi.Models.Categories;
 using ShopwareApi.Models.Translations;
+using ShopwareApi.Models.Manufacturers;
 
 namespace ShopwareApi.Models.Articles
 {

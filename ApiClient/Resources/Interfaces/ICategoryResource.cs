@@ -18,7 +18,5 @@ namespace ShopwareApi.Resources
         void Add(Category category);
 
         void Update(Category category);
-
-        void Delete(int id);
     }
 }

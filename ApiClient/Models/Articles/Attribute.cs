@@ -8,28 +8,28 @@ namespace ShopwareApi.Models.Articles
 {
     public class Attribute
     {
-        private int id;
-        private int articleId;
-        private int articleDetailId;
-        private string attr1;
-        private string attr2;
-        private string attr3;
-        private string attr4;
-        private string attr5;
-        private string attr6;
-        private string attr7;
-        private string attr8;
-        private string attr9;
-        private string attr10;
-        private string attr11;
-        private string attr12;
-        private string attr13;
-        private string attr14;
-        private string attr15;
-        private string attr16;
-        private string attr17;
-        private string attr18;
-        private string attr19;
-        private string attr20;
+        public int id;
+        public int articleId;
+        public int articleDetailId;
+        public string attr1;
+        public string attr2;
+        public string attr3;
+        public string attr4;
+        public string attr5;
+        public string attr6;
+        public string attr7;
+        public string attr8;
+        public string attr9;
+        public string attr10;
+        public string attr11;
+        public string attr12;
+        public string attr13;
+        public string attr14;
+        public string attr15;
+        public string attr16;
+        public string attr17;
+        public string attr18;
+        public string attr19;
+        public string attr20;
     }
 }

@@ -22,6 +22,6 @@ namespace ShopwareApi.Models.Countries
         public bool displayStateInRegistration;
         public bool forceStateInRegistration;
         public int areaId;
-        public object states; //TODO Add correct type
+        public List<State> states;
     }
 }
