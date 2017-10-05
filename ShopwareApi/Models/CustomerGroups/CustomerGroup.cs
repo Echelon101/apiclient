@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopwareApi.Models.Customers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,6 @@ namespace ShopwareApi.Models.CustomerGroups
         public int discount;
         public int minimumOrder;
         public int minimumOrderSurcharge;
-        public object discounts; //TODO add correct Type
+        public List<Discount> discounts; //TODO add correct Type
     }
 }

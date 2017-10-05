@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopwareApi.Models.Articles
+namespace ShopwareApi.Models.Customers
 {
-    public class SimilarArticle
+    public class Discount
     {
         public int id;
-        public string name;
+        public int discount;
+        public int value;
     }
 }

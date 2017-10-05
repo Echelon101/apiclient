@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ShopwareApi.Models.CustomerGroups;
 
 namespace ShopwareApi.Models.Categories
 {
@@ -32,10 +33,10 @@ namespace ShopwareApi.Models.Categories
         public int mediaId;
         public List<string> attribute;
 
-        public object emotions;
+        public List<Media.Media> emotions;
         public string media;
 
-        public List<object> customerGroups;
+        public List<CustomerGroup> customerGroups;
         public int childrenCount;
         public int articleCount;
     }

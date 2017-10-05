@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopwareApi.Models.Articles
+namespace ShopwareApi.Models.Configurators
 {
-    public class Link
+    public class ConfiguratorGroup
     {
         public int id;
-        public int articleId;
+        public string description;
         public string name;
-        public string link;
-        public string target;
+        public int position;
     }
 }

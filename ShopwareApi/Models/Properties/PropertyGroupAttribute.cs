@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopwareApi.Models.Articles
+namespace ShopwareApi.Models.Properties
 {
-    public class SimilarArticle
+    public class PropertyGroupAttribute
     {
         public int id;
-        public string name;
+        public int propertyGroupId;
     }
 }

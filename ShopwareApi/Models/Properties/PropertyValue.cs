@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopwareApi.Models.Articles
+namespace ShopwareApi.Models.Properties
 {
     public class PropertyValue
     {

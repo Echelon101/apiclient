@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopwareApi.Models.Articles
+namespace ShopwareApi.Models.Properties
 {
-    public class Tax
+    public class PropertyGroupOption
     {
-        public int? id;
-        public double? tax;
+        public int id;
         public string name;
+        public bool filterable;
     }
 }

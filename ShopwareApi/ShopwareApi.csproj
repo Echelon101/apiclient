@@ -57,20 +57,25 @@
     <Compile Include="Models\Articles\ArticleDetail.cs" />
     <Compile Include="Models\Articles\ArticleMain.cs" />
     <Compile Include="Models\Articles\ArticleMainDetail.cs" />
-    <Compile Include="Models\Articles\Attribute.cs" />
-    <Compile Include="Models\Articles\ConfiguratorOption.cs" />
-    <Compile Include="Models\Articles\CustomerGroup.cs" />
+    <Compile Include="Models\Articles\Translation.cs" />
+    <Compile Include="Models\Attributes\Attribute.cs" />
+    <Compile Include="Models\Configurators\ConfiguratorGroup.cs" />
+    <Compile Include="Models\Configurators\ConfiguratorOption.cs" />
     <Compile Include="Models\Articles\Download.cs" />
     <Compile Include="Models\Articles\Image.cs" />
     <Compile Include="Models\Articles\Link.cs" />
     <Compile Include="Models\Articles\Price.cs" />
-    <Compile Include="Models\Articles\PropertyGroup.cs" />
-    <Compile Include="Models\Articles\PropertyValue.cs" />
+    <Compile Include="Models\Customers\Discount.cs" />
+    <Compile Include="Models\Properties\PropertyGroup.cs" />
+    <Compile Include="Models\Properties\PropertyGroupAttribute.cs" />
+    <Compile Include="Models\Properties\PropertyGroupOption.cs" />
+    <Compile Include="Models\Properties\PropertyValue.cs" />
     <Compile Include="Models\Articles\RelatedArticles.cs" />
     <Compile Include="Models\Articles\SeoCategories.cs" />
     <Compile Include="Models\Articles\SimilarArticle.cs" />
+    <Compile Include="Models\Configurators\ConfiguratorSet.cs" />
     <Compile Include="Models\Manufacturers\Supplier.cs" />
-    <Compile Include="Models\Articles\Tax.cs" />
+    <Compile Include="Models\Taxes\Tax.cs" />
     <Compile Include="Models\Caches\Cache.cs" />
     <Compile Include="Models\Categories\Category.cs" />
     <Compile Include="Models\Countries\Country.cs" />
@@ -80,7 +85,11 @@
     <Compile Include="Models\GenerateArticleImages\GenerateArticleImageModel.cs" />
     <Compile Include="Models\Media\Media.cs" />
     <Compile Include="Models\Orders\Order.cs" />
+    <Compile Include="Models\Shops\Currency.cs" />
+    <Compile Include="Models\Shops\Shop.cs" />
+    <Compile Include="Models\Translations\Locale.cs" />
     <Compile Include="Models\Translations\Translation.cs" />
+    <Compile Include="Models\Variants\Variant.cs" />
     <Compile Include="Models\Version\Version.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AddressResource.cs" />
@@ -113,6 +122,8 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\Emotions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

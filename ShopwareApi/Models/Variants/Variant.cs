@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ShopwareApi.Models.Configurators;
+using ShopwareApi.Models.Articles;
 
-
-namespace ShopwareApi.Models.Articles
+namespace ShopwareApi.Models.Variants
 {
-    public class ArticleMainDetail
+    public class Variant
     {
         public int id;
         public int articleId;
@@ -21,20 +21,13 @@ namespace ShopwareApi.Models.Articles
         public int inStock;
         public int stockMin;
         public string weight;
-        public string width;
         public string len;
         public string height;
         public string ean;
         public int position;
         public int minPurchase;
-        public int? purchaseSteps;
-        public int? maxPurchase;
         public string purchaseUnit;
-        public string referenceUnit;
-        public string packUnit;
         public bool shippingFree;
-        public string releaseDate;
-        public string shippingTime;
         public List<Price> prices;
         public Attributes.Attribute attribute = new Attributes.Attribute();
         public List<ConfiguratorOption> configuratorOptions;
