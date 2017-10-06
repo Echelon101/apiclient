@@ -7,73 +7,43 @@ using ShopwareApi;
 using ShopwareApi.Models.Articles;
 using ShopwareApi.Resources;
 using System.Threading;
+using YamlDotNet.Serialization;
+using System.CodeDom.Compiler;
+using System.IO;
 
-namespace ApiClient
+namespace ApiClientTest
 {
     class Program
     {
-        public static ShopwareClient shopwareClient;
+        private static string url = System.Configuration.ConfigurationSettings.AppSettings["Url"];
+        private static string username = System.Configuration.ConfigurationSettings.AppSettings["Username"];
+        private static string apiKey = System.Configuration.ConfigurationSettings.AppSettings["ApiKey"];
         static void Main(string[] args)
         {
-            shopwareClient =  new ShopwareClient("http://localhost/shop/api", "apiuser", "ag5tA9KQVKwF1ANVJPFBplLVgSFarIvKFbWih69V");
-            
-            /*
-            Thread tid1 = new Thread(new ThreadStart(Thread1));
-            Thread tid2 = new Thread(new ThreadStart(Thread2));
-            Thread tid3 = new Thread(new ThreadStart(Thread3));
-            Thread tid4 = new Thread(new ThreadStart(Thread4));
-            Thread tid5 = new Thread(new ThreadStart(Thread5));
-
-            tid1.Start();
-            tid2.Start();
-            tid3.Start();
-            tid4.Start();
-            tid5.Start();
-            */
-
-            ArticleMain article = shopwareClient.GetArticleResource().Get(5000);
-
-            Console.WriteLine("done");
+            try
+            {
+                Console.WriteLine("{0}, {1}, {2}", url, username, apiKey);
+                TestComponent test = new TestComponent(url, username, apiKey);
+                DumpAsYaml(test.Shops("1"));
+                Console.WriteLine("------------------------------------------------------");
+                DumpAsYaml(test.Shops());
+                Console.WriteLine("------------------------------------------------------");
+                
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                
+            }
             Console.ReadKey();
-            
         }
 
-        public static void Thread1()
+        private static void DumpAsYaml(object o)
         {
-            for (int i = 1; i < 1000; i++)
-            {
-                shopwareClient.GetArticleResource().Delete(i.ToString());
-                Console.WriteLine(string.Format("Thread1 {0}", i));
-            }
+            var stringBuilder = new StringBuilder();
+            var serializer = new Serializer();
+            serializer.Serialize(new IndentedTextWriter(new StringWriter(stringBuilder)), o);
+            Console.WriteLine(stringBuilder);
         }
-        public static void Thread2()
-        {
-            for (int i = 1000; i < 2000; i++)
-            {
-                shopwareClient.GetArticleResource().Delete(i.ToString());
-                Console.WriteLine(string.Format("Thread2 {0}", i));
-            }
-        }
-        public static void Thread3()
-        {
-            for (int i = 2000; i < 3000; i++) {
-                shopwareClient.GetArticleResource().Delete(i.ToString());
-                Console.WriteLine(string.Format("Thread3 {0}", i));
-            }
-        }
-        public static void Thread4()
-        {
-            for (int i = 3000; i < 4000; i++) { shopwareClient.GetArticleResource().Delete(i.ToString());
-                Console.WriteLine(string.Format("Thread4 {0}", i));
-            }
-        }
-        public static void Thread5()
-        {
-            for (int i = 4000; i < 5000; i++) { shopwareClient.GetArticleResource().Delete(i.ToString());
-                Console.WriteLine(string.Format("Thread5 {0}", i));
-            }
-        }
-        
-
     }
 }
