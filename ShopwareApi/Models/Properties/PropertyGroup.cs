@@ -8,12 +8,12 @@ namespace ShopwareApi.Models.Properties
 {
     public class PropertyGroup
     {
-        public int id;
+        public int? id;
         public string name;
         public int position;
         public bool comparable;
         public int sortMode;
         public List<PropertyGroupOption> options;
-        public PropertyGroupAttribute attribute = new PropertyGroupAttribute();
+        public List<PropertyGroupAttribute> attribute;
     }
 }

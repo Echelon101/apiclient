@@ -8,9 +8,12 @@ namespace ShopwareApi.Models.Shops
 {
     public class Shop
     {
-        public int id;
+        public int? id;
         public int mainId;
-        public int categoryId;
+        public int? categoryId;
+        public int? localeId;
+        public int? currencyId;
+        public int? customerGroupId;
         public string name;
         public string title;
         public string position;

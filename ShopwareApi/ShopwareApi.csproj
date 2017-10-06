@@ -98,7 +98,12 @@
     <Compile Include="Resources\CategoryResource.cs" />
     <Compile Include="Resources\CountryResource.cs" />
     <Compile Include="Resources\Interfaces\IAddressResource.cs" />
+    <Compile Include="Resources\Interfaces\IPropertyGroupResource.cs" />
     <Compile Include="Resources\Interfaces\ISupplierResource.cs" />
+    <Compile Include="Resources\Interfaces\ITranslationResource.cs" />
+    <Compile Include="Resources\Interfaces\IVariantResource.cs" />
+    <Compile Include="Resources\PropertyGroupResource.cs" />
+    <Compile Include="Resources\ShopResource.cs" />
     <Compile Include="Resources\SupplierResource.cs" />
     <Compile Include="Resources\CustomerGroupResource.cs" />
     <Compile Include="Resources\CustomerResource.cs" />
@@ -116,11 +121,14 @@
     <Compile Include="Resources\MediaResource.cs" />
     <Compile Include="Resources\OrderResource.cs" />
     <Compile Include="Resources\SuperResource.cs" />
+    <Compile Include="Resources\TranslationResource.cs" />
+    <Compile Include="Resources\VariantResource.cs" />
     <Compile Include="Resources\VersionResource.cs" />
     <Compile Include="ShopwareClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Compile Include="Resources\Interfaces\IShopsResource.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Emotions\" />
