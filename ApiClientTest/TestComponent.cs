@@ -25,18 +25,14 @@ namespace ApiClientTest
             this.client = new ShopwareClient(url, username, apiKey);
         }
 
-        public object Shops(string id = null)
+        public Shop Shop(string id)
         {
-            if (id != null)
-            {
-                Shop shop = client.GetShopResource().Get(id);
-                return shop;
-            }
-            else
-            {
-                List<Shop> shops = client.GetShopResource().GetAll();
-                return shops;
-            }
+            Shop shop = client.GetShopResource().Get(id);
+            return shop;
+        }
+        public List<Shop> Shops()
+        {
+            return client.GetShopResource().GetAll();
         }
     }
 }

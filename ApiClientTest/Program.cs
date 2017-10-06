@@ -11,6 +11,7 @@ using YamlDotNet.Serialization;
 using System.CodeDom.Compiler;
 using System.IO;
 
+
 namespace ApiClientTest
 {
     class Program
@@ -22,13 +23,13 @@ namespace ApiClientTest
         {
             try
             {
-                Console.WriteLine("{0}, {1}, {2}", url, username, apiKey);
-                TestComponent test = new TestComponent(url, username, apiKey);
-                DumpAsYaml(test.Shops("1"));
-                Console.WriteLine("------------------------------------------------------");
-                DumpAsYaml(test.Shops());
-                Console.WriteLine("------------------------------------------------------");
-                
+                ShopwareClient client = new ShopwareClient(url, username, apiKey);
+
+                ArticleMain article = client.GetArticleResource().Get(5000);
+
+                Console.WriteLine(article.name);
+                Console.WriteLine(article.mainDetail.number);
+                Console.WriteLine(article.mainDetail.prices[0].price);
             }
             catch(Exception e)
             {
