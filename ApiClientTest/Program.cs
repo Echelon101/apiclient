@@ -7,7 +7,7 @@ using ShopwareApi;
 using ShopwareApi.Models.Articles;
 using ShopwareApi.Resources;
 using System.Threading;
-using YamlDotNet.Serialization;
+//using YamlDotNet.Serialization;
 using System.CodeDom.Compiler;
 using System.IO;
 
@@ -39,12 +39,12 @@ namespace ApiClientTest
             Console.ReadKey();
         }
 
-        private static void DumpAsYaml(object o)
+        /*private static void DumpAsYaml(object o)
         {
             var stringBuilder = new StringBuilder();
             var serializer = new Serializer();
             serializer.Serialize(new IndentedTextWriter(new StringWriter(stringBuilder)), o);
             Console.WriteLine(stringBuilder);
-        }
+        }*/
     }
 }
