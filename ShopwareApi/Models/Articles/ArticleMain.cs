@@ -13,6 +13,7 @@ using ShopwareApi.Models.Properties;
 
 namespace ShopwareApi.Models.Articles
 {
+    [Serializable]
     public class ArticleMain
     {
         public int? id;
@@ -29,7 +30,7 @@ namespace ShopwareApi.Models.Articles
 
         public string added;
         public bool active;
-        public int pseudoSales;
+        public int? pseudoSales;
 
         public bool highlight;
         public string keywords;
@@ -39,11 +40,11 @@ namespace ShopwareApi.Models.Articles
         public bool priceGroupActive;
         public bool lastStock;
 
-        public int crossBundleLook;
+        public int? crossBundleLook;
         public bool notification;
         public string template;
 
-        public int mode;
+        public int? mode;
         public string availableFrom;
         public string availableTo;
 
@@ -66,6 +67,6 @@ namespace ShopwareApi.Models.Articles
         public List<Category> categories;
         public List<SimilarArticle> similar;
         public List<RelatedArticles> related;
-        public List<Translation> translations;
+        public Translation translations = new Translation(); //TODO Check if correct that its no Array
     }
 }

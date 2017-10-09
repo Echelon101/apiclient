@@ -8,10 +8,10 @@ namespace ShopwareApi.Models.Articles
 {
     public class Download
     {
-        public int id;
-        public int articleId;
+        public int? id;
+        public int? articleId;
         public string name;
         public string file;
-        public int size;
+        public int? size;
     }
 }

@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ShopwareApi;
-using ShopwareApi.Models.Articles;
-using ShopwareApi.Resources;
-using System.Threading;
 using YamlDotNet.Serialization;
-using System.CodeDom.Compiler;
 using System.IO;
-
+using System.Xml.Serialization;
+using Newtonsoft.Json;
+using System.Diagnostics;
+using ShopwareApi.Models.Shops;
 
 namespace ApiClientTest
 {
@@ -25,26 +20,65 @@ namespace ApiClientTest
             {
                 ShopwareClient client = new ShopwareClient(url, username, apiKey);
 
-                ArticleMain article = client.GetArticleResource().Get(5000);
+                Shop shop = client.GetShopResource().Get(2);
+                Console.WriteLine(shop.name);
+                Console.WriteLine(shop.@default);
+                Console.WriteLine(shop.host);
+                Console.WriteLine("----------------------------------------------------");
+                string response = shop.SerializeObjectJson<Shop>();
+                Console.WriteLine(response);
+                Console.WriteLine("----------------------------------------------------");
+                string jsonResponse = client.GetShopResource().GetJsonResponse(2);
+                Console.WriteLine(jsonResponse);
 
-                Console.WriteLine(article.name);
-                Console.WriteLine(article.mainDetail.number);
-                Console.WriteLine(article.mainDetail.prices[0].price);
+                /*
+                string json = client.GetArticleResource().GetJsonResponse(25);
+                Console.WriteLine(json);
+
+
+                StreamWriter streamWriter = new StreamWriter("JsonSW_OLD.json");
+                streamWriter.WriteLine(json);
+                */
             }
             catch(Exception e)
             {
                 Console.WriteLine(e);
-                
+                Debug.WriteLine(e);
             }
             Console.ReadKey();
         }
 
-        private static void DumpAsYaml(object o)
+    }
+
+    public static class Serializer
+    {
+        public static string SerializeObjectXml<T>(this T toSerialize)
         {
-            var stringBuilder = new StringBuilder();
-            var serializer = new Serializer();
-            serializer.Serialize(new IndentedTextWriter(new StringWriter(stringBuilder)), o);
-            Console.WriteLine(stringBuilder);
+            XmlSerializer xmlSerializer = new XmlSerializer(toSerialize.GetType());
+
+            using (StringWriter textWriter = new StringWriter())
+            {
+                xmlSerializer.Serialize(textWriter, toSerialize);
+                return textWriter.ToString();
+            }
+        }
+
+        public static string SerializeObjectJson<T>(this T toSerialize)
+        {
+            JsonSerializer jsonSerializer = new JsonSerializer();
+
+            using (StringWriter textWriter = new StringWriter())
+            {
+                jsonSerializer.Serialize(textWriter, toSerialize);
+                return textWriter.ToString();
+            }
+        }
+
+        public static string  SerializeObjectYaml<T>(this T toSerialize)
+        {
+            var yamlSerializer = new SerializerBuilder().Build();
+
+            return yamlSerializer.Serialize(toSerialize);
         }
     }
 }

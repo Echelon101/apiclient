@@ -34,6 +34,6 @@ namespace ShopwareApi.Models.Articles
         public string descriptionLong;
         public string keywords;
         public string packUnit;
-        public string shopId;
+        public int? shopId;
     }
 }

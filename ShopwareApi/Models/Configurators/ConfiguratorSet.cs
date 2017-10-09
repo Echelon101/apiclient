@@ -8,10 +8,10 @@ namespace ShopwareApi.Models.Configurators
 {
     public class ConfiguratorSet
     {
-        public int id;
+        public int? id;
         public string name;
         public bool @public;
-        public int type;
-        public ConfiguratorGroup groups = new ConfiguratorGroup();
+        public int? type;
+        public List<ConfiguratorGroup> groups;
     }
 }

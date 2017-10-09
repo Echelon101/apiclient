@@ -8,18 +8,18 @@ namespace ShopwareApi.Models.Articles
 {
     public class Image
     {
-        public int id;
-        public int articleId;
+        public int? id;
+        public int? articleId;
         public int? articleDetailsId;
         public string descripion;
         public string path;
-        public int main;
-        public int position;
-        public int width;
-        public int height;
+        public int? main;
+        public int? position;
+        public int? width;
+        public int? height;
         public string relations;
         public string extension;
         public int? parentId;
-        public int mediaId;
+        public int? mediaId;
     }
 }

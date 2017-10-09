@@ -8,7 +8,7 @@ namespace ShopwareApi.Models.Articles
 {
     public class RelatedArticles
     {
-        public int id;
+        public int? id;
         public string name;
     }
 }

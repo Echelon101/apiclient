@@ -8,8 +8,8 @@ namespace ShopwareApi.Models.Articles
 {
     public class Link
     {
-        public int id;
-        public int articleId;
+        public int? id;
+        public int? articleId;
         public string name;
         public string link;
         public string target;

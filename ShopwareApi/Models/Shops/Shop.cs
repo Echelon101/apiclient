@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShopwareApi.Models.Shops
 {
+    [Serializable]
     public class Shop
     {
         public int? id;
