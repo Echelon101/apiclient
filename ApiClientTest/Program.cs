@@ -27,7 +27,7 @@ namespace ApiClientTest
                 List<ShopwareApi.Models.CustomerGroups.CustomerGroup> customerGroups = client.GetCustomerGroupResource().GetAll();
                 List<ShopwareApi.Models.Media.Media> media = client.GetMediaResource().GetAll();
                 //ShopwareApi.Models.Orders.Order order1 = client.GetOrderResource().Get(1); //TODO: FIX NullReferenceException
-                //List<ShopwareApi.Models.Orders.Order> orders = client.GetOrderResource().GetAll();
+                List<ShopwareApi.Models.Orders.Order> orders = client.GetOrderResource().GetAll();
                 List<ShopwareApi.Models.Properties.PropertyGroup> propertyGroups = client.GetPropertyGroupResource().GetAll();
                 ShopwareApi.Models.Shops.Shop shop = client.GetShopResource().Get(2);
                 List<ShopwareApi.Models.Manufacturers.Supplier> suppliers = client.GetSupplierResource().GetAll();
