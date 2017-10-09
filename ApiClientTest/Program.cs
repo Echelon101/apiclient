@@ -1,11 +1,10 @@
 ﻿using System;
 using ShopwareApi;
-using YamlDotNet.Serialization;
+using ShopwareApi.Serializers;
 using System.IO;
-using System.Xml.Serialization;
-using Newtonsoft.Json;
 using System.Diagnostics;
-using ShopwareApi.Models.Shops;
+using System.Collections.Generic;
+
 
 namespace ApiClientTest
 {
@@ -20,16 +19,67 @@ namespace ApiClientTest
             {
                 ShopwareClient client = new ShopwareClient(url, username, apiKey);
 
-                Shop shop = client.GetShopResource().Get(2);
-                Console.WriteLine(shop.name);
-                Console.WriteLine(shop.@default);
-                Console.WriteLine(shop.host);
-                Console.WriteLine("----------------------------------------------------");
-                string response = shop.SerializeObjectJson<Shop>();
-                Console.WriteLine(response);
-                Console.WriteLine("----------------------------------------------------");
-                string jsonResponse = client.GetShopResource().GetJsonResponse(2);
-                Console.WriteLine(jsonResponse);
+                List<ShopwareApi.Models.Adresses.Address> addresses = client.GetAddressResource().GetAll();
+                ShopwareApi.Models.Articles.ArticleMain article = client.GetArticleResource().Get(25);
+                List<ShopwareApi.Models.Caches.Cache> caches = client.GetCacheResource().GetAll();
+                ShopwareApi.Models.Categories.Category category = client.GetCategoryResource().Get(22);
+                List<ShopwareApi.Models.Countries.Country> country = client.GetCountryResource().GetAll();
+                List<ShopwareApi.Models.CustomerGroups.CustomerGroup> customerGroups = client.GetCustomerGroupResource().GetAll();
+                List<ShopwareApi.Models.Media.Media> media = client.GetMediaResource().GetAll();
+                //ShopwareApi.Models.Orders.Order order1 = client.GetOrderResource().Get(1); //TODO: FIX NullReferenceException
+                //List<ShopwareApi.Models.Orders.Order> orders = client.GetOrderResource().GetAll();
+                List<ShopwareApi.Models.Properties.PropertyGroup> propertyGroups = client.GetPropertyGroupResource().GetAll();
+                ShopwareApi.Models.Shops.Shop shop = client.GetShopResource().Get(2);
+                List<ShopwareApi.Models.Manufacturers.Supplier> suppliers = client.GetSupplierResource().GetAll();
+                List<ShopwareApi.Models.Variants.Variant> variants = client.GetVariantResource().GetAll();
+                ShopwareApi.Models.Version.Version version = client.GetVersionResource().Get();
+
+                Console.WriteLine("Jump into Address Loop");
+                foreach (ShopwareApi.Models.Adresses.Address address in addresses)
+                {
+                    Console.WriteLine(address.SerializeObjectJson<ShopwareApi.Models.Adresses.Address>());
+                    Console.WriteLine("----------------------------------------------------------------");
+                }
+                Console.WriteLine("done");
+                Console.WriteLine("----------------------------------------------------------------");
+                Console.WriteLine(article.SerializeObjectJson<ShopwareApi.Models.Articles.ArticleMain>());
+                Console.WriteLine("----------------------------------------------------------------");
+                Console.WriteLine("Jump into Cache Loop");
+                foreach (ShopwareApi.Models.Caches.Cache cache in caches)
+                {
+                    Console.WriteLine(cache.SerializeObjectJson<ShopwareApi.Models.Caches.Cache>());
+                    Console.WriteLine("----------------------------------------------------------------");
+                }
+                Console.WriteLine("done");
+                Console.WriteLine("----------------------------------------------------------------");
+                Console.WriteLine("Jump into PropertyGroup Loop");
+                foreach (ShopwareApi.Models.Properties.PropertyGroup propertyGroup in propertyGroups)
+                {
+                    Console.WriteLine(propertyGroup.SerializeObjectJson<ShopwareApi.Models.Properties.PropertyGroup>());
+                    Console.WriteLine("----------------------------------------------------------------");
+                }
+                Console.WriteLine("done");
+                Console.WriteLine("----------------------------------------------------------------");
+                Console.WriteLine(shop.SerializeObjectJson<ShopwareApi.Models.Shops.Shop>());
+                Console.WriteLine("----------------------------------------------------------------");
+                Console.WriteLine("Jump into Supplier Loop");
+                foreach  (var supplier in suppliers)
+                {
+                    Console.WriteLine(supplier.SerializeObjectJson<ShopwareApi.Models.Manufacturers.Supplier>());
+                    Console.WriteLine("----------------------------------------------------------------");
+                }
+                Console.WriteLine("done");
+                Console.WriteLine("----------------------------------------------------------------");
+                Console.WriteLine("Jump into Variant Loop");
+                foreach (var variant in variants)
+                {
+                    Console.WriteLine(variant.SerializeObjectJson<ShopwareApi.Models.Variants.Variant>());
+                    Console.WriteLine("----------------------------------------------------------------");
+                }
+                Console.WriteLine("done");
+                Console.WriteLine("----------------------------------------------------------------");
+                Console.WriteLine(version.SerializeObjectJson<ShopwareApi.Models.Version.Version>());
+
 
                 /*
                 string json = client.GetArticleResource().GetJsonResponse(25);
@@ -40,45 +90,14 @@ namespace ApiClientTest
                 streamWriter.WriteLine(json);
                 */
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
                 Debug.WriteLine(e);
+                
             }
             Console.ReadKey();
         }
 
-    }
-
-    public static class Serializer
-    {
-        public static string SerializeObjectXml<T>(this T toSerialize)
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(toSerialize.GetType());
-
-            using (StringWriter textWriter = new StringWriter())
-            {
-                xmlSerializer.Serialize(textWriter, toSerialize);
-                return textWriter.ToString();
-            }
-        }
-
-        public static string SerializeObjectJson<T>(this T toSerialize)
-        {
-            JsonSerializer jsonSerializer = new JsonSerializer();
-
-            using (StringWriter textWriter = new StringWriter())
-            {
-                jsonSerializer.Serialize(textWriter, toSerialize);
-                return textWriter.ToString();
-            }
-        }
-
-        public static string  SerializeObjectYaml<T>(this T toSerialize)
-        {
-            var yamlSerializer = new SerializerBuilder().Build();
-
-            return yamlSerializer.Serialize(toSerialize);
-        }
     }
 }

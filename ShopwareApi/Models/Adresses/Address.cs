@@ -24,6 +24,6 @@ namespace ShopwareApi.Models.Adresses
         public string additionalAddressLine2;
         public int? country;
         public int? state;
-        public List<string> attribute; // TODO add correct type
+        //public List<string> attribute; // TODO add correct type
     }
 }
