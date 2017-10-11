@@ -9,7 +9,8 @@ namespace ShopwareApi
     public class ApiResponse<TData>
     {
         public TData data;
-        public Boolean success;
+        public bool success;
         public string message;
+        public int? total;
     }
 }
