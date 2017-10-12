@@ -46,7 +46,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 1);
+            this.label1.Location = new System.Drawing.Point(20, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             // loginHostBox1
             // 
-            this.loginHostBox1.Location = new System.Drawing.Point(3, 17);
+            this.loginHostBox1.Location = new System.Drawing.Point(23, 26);
             this.loginHostBox1.Name = "loginHostBox1";
             this.loginHostBox1.Size = new System.Drawing.Size(100, 20);
             this.loginHostBox1.TabIndex = 1;
@@ -62,7 +62,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 40);
+            this.label2.Location = new System.Drawing.Point(20, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 2;
@@ -70,7 +70,7 @@
             // 
             // loginUsernameBox1
             // 
-            this.loginUsernameBox1.Location = new System.Drawing.Point(3, 57);
+            this.loginUsernameBox1.Location = new System.Drawing.Point(23, 66);
             this.loginUsernameBox1.Name = "loginUsernameBox1";
             this.loginUsernameBox1.Size = new System.Drawing.Size(100, 20);
             this.loginUsernameBox1.TabIndex = 3;
@@ -78,7 +78,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(0, 80);
+            this.label3.Location = new System.Drawing.Point(20, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // loginPasswordBox1
             // 
-            this.loginPasswordBox1.Location = new System.Drawing.Point(3, 97);
+            this.loginPasswordBox1.Location = new System.Drawing.Point(23, 106);
             this.loginPasswordBox1.Name = "loginPasswordBox1";
             this.loginPasswordBox1.Size = new System.Drawing.Size(100, 20);
             this.loginPasswordBox1.TabIndex = 5;
@@ -94,7 +94,7 @@
             // 
             // loginLoginButton1
             // 
-            this.loginLoginButton1.Location = new System.Drawing.Point(3, 124);
+            this.loginLoginButton1.Location = new System.Drawing.Point(23, 133);
             this.loginLoginButton1.Name = "loginLoginButton1";
             this.loginLoginButton1.Size = new System.Drawing.Size(75, 23);
             this.loginLoginButton1.TabIndex = 6;
@@ -105,7 +105,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 150);
+            this.label4.Location = new System.Drawing.Point(20, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 7;
@@ -114,7 +114,7 @@
             // loginSchemeBox1
             // 
             this.loginSchemeBox1.FormattingEnabled = true;
-            this.loginSchemeBox1.Location = new System.Drawing.Point(3, 166);
+            this.loginSchemeBox1.Location = new System.Drawing.Point(23, 175);
             this.loginSchemeBox1.Name = "loginSchemeBox1";
             this.loginSchemeBox1.Size = new System.Drawing.Size(121, 21);
             this.loginSchemeBox1.TabIndex = 8;
@@ -123,7 +123,7 @@
             // loginContinueButton1
             // 
             this.loginContinueButton1.Enabled = false;
-            this.loginContinueButton1.Location = new System.Drawing.Point(3, 194);
+            this.loginContinueButton1.Location = new System.Drawing.Point(23, 203);
             this.loginContinueButton1.Name = "loginContinueButton1";
             this.loginContinueButton1.Size = new System.Drawing.Size(75, 23);
             this.loginContinueButton1.TabIndex = 9;
@@ -146,13 +146,13 @@
             this.loginPanel1.Controls.Add(this.label1);
             this.loginPanel1.Location = new System.Drawing.Point(12, 12);
             this.loginPanel1.Name = "loginPanel1";
-            this.loginPanel1.Size = new System.Drawing.Size(235, 240);
+            this.loginPanel1.Size = new System.Drawing.Size(260, 237);
             this.loginPanel1.TabIndex = 11;
             // 
             // loginErrorBox1
             // 
             this.loginErrorBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.loginErrorBox1.Location = new System.Drawing.Point(141, 17);
+            this.loginErrorBox1.Location = new System.Drawing.Point(181, 3);
             this.loginErrorBox1.Multiline = true;
             this.loginErrorBox1.Name = "loginErrorBox1";
             this.loginErrorBox1.ReadOnly = true;
