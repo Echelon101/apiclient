@@ -18,31 +18,37 @@ namespace VisualClient
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void loginSchemeBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            loginContinueButton1.Enabled = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void loginLoginButton1_Click(object sender, EventArgs e)
         {
-            Client client = new Client(textBox1.Text, textBox2.Text, textBox3.Text, "");
+
+            MySqlClient client = new MySqlClient(loginHostBox1.Text, loginUsernameBox1.Text, loginPasswordBox1.Text, "");
             if (!client.CheckConnection())
             {
-                label5.Visible = true;
-                label5.Text = "Login Failed";
-            }else if (client.CheckConnection())
+                loginErrorBox1.Visible = true;
+                loginErrorBox1.Text = String.Format("Login failed ErrorCode: {0}", client.LastError);
+            }
+            else
             {
-                label5.Visible = true;
-                label5.Text = "Login Successful";
+                loginErrorBox1.Visible = true;
+                loginErrorBox1.Text = "Login Successful";
 
                 List<string> schemes = client.GetSchemes();
 
                 foreach (string scheme in schemes)
                 {
-                    comboBox1.Items.Add(new ListViewItem(scheme));
+                    loginSchemeBox1.Items.Add(scheme);
                 }
             }
-            
+        }
+
+        private void loginContinueButton1_Click(object sender, EventArgs e)
+        {
+            loginPanel1.Visible = false;
         }
     }
 }
