@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatabaseClient;
 using System.Data;
+using System.Net;
 
 namespace DatabaseClientTest
 {
@@ -12,25 +13,31 @@ namespace DatabaseClientTest
     {
         static void Main(string[] args)
         {
-            Client client = new Client("localhost", "root", "", "export");
-            /*
-            List<string> fields = client.SelectQuery("*", "exportlog");
-
-            foreach (string field in fields)
+            bool running = true;
+            while (running)
             {
-                Console.WriteLine(field);
+                string input = Console.ReadLine();
+                if(input.ToLower() == "exit")
+                {
+                    running = false;
+                }
+                else
+                {
+                    IPHostEntry hostEntry = Dns.GetHostEntry(input);
+                    foreach (var entry in hostEntry.AddressList)
+                    {
+                        Console.WriteLine(entry);
+                    }
+                    Console.WriteLine("-done");
+                    foreach (var entry in hostEntry.Aliases)
+                    {
+                        Console.WriteLine(entry);
+                    }
+                    Console.WriteLine("--done");
+                    Console.WriteLine(hostEntry.HostName);
+                    Console.WriteLine("------");
+                }
             }
-
-            */
-
-            List<string> tables = client.GetTables();
-
-            foreach (string table in tables)
-            {
-                Console.WriteLine(table);
-            }
-
-            Console.ReadKey();
         }
     }
 }

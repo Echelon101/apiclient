@@ -39,64 +39,78 @@
             this.loginSchemeBox1 = new System.Windows.Forms.ComboBox();
             this.loginContinueButton1 = new System.Windows.Forms.Button();
             this.loginPanel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.loginIpRadio3 = new System.Windows.Forms.RadioButton();
+            this.loginIpRadio2 = new System.Windows.Forms.RadioButton();
+            this.loginIpRadio1 = new System.Windows.Forms.RadioButton();
+            this.loginPortNumeric1 = new System.Windows.Forms.NumericUpDown();
             this.loginErrorBox1 = new System.Windows.Forms.TextBox();
             this.loginPanel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loginPortNumeric1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 10);
+            this.label1.Location = new System.Drawing.Point(27, 12);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.Size = new System.Drawing.Size(37, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Host";
             // 
             // loginHostBox1
             // 
-            this.loginHostBox1.Location = new System.Drawing.Point(23, 26);
+            this.loginHostBox1.Location = new System.Drawing.Point(31, 32);
+            this.loginHostBox1.Margin = new System.Windows.Forms.Padding(4);
             this.loginHostBox1.Name = "loginHostBox1";
-            this.loginHostBox1.Size = new System.Drawing.Size(100, 20);
+            this.loginHostBox1.Size = new System.Drawing.Size(132, 22);
             this.loginHostBox1.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 49);
+            this.label2.Location = new System.Drawing.Point(27, 60);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Username";
             // 
             // loginUsernameBox1
             // 
-            this.loginUsernameBox1.Location = new System.Drawing.Point(23, 66);
+            this.loginUsernameBox1.Location = new System.Drawing.Point(31, 81);
+            this.loginUsernameBox1.Margin = new System.Windows.Forms.Padding(4);
             this.loginUsernameBox1.Name = "loginUsernameBox1";
-            this.loginUsernameBox1.Size = new System.Drawing.Size(100, 20);
+            this.loginUsernameBox1.Size = new System.Drawing.Size(132, 22);
             this.loginUsernameBox1.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 89);
+            this.label3.Location = new System.Drawing.Point(27, 110);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.Size = new System.Drawing.Size(69, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Password";
             // 
             // loginPasswordBox1
             // 
-            this.loginPasswordBox1.Location = new System.Drawing.Point(23, 106);
+            this.loginPasswordBox1.Location = new System.Drawing.Point(31, 130);
+            this.loginPasswordBox1.Margin = new System.Windows.Forms.Padding(4);
             this.loginPasswordBox1.Name = "loginPasswordBox1";
-            this.loginPasswordBox1.Size = new System.Drawing.Size(100, 20);
+            this.loginPasswordBox1.Size = new System.Drawing.Size(132, 22);
             this.loginPasswordBox1.TabIndex = 5;
             this.loginPasswordBox1.UseSystemPasswordChar = true;
             // 
             // loginLoginButton1
             // 
-            this.loginLoginButton1.Location = new System.Drawing.Point(23, 133);
+            this.loginLoginButton1.Location = new System.Drawing.Point(31, 164);
+            this.loginLoginButton1.Margin = new System.Windows.Forms.Padding(4);
             this.loginLoginButton1.Name = "loginLoginButton1";
-            this.loginLoginButton1.Size = new System.Drawing.Size(75, 23);
+            this.loginLoginButton1.Size = new System.Drawing.Size(100, 28);
             this.loginLoginButton1.TabIndex = 6;
             this.loginLoginButton1.Text = "Login";
             this.loginLoginButton1.UseVisualStyleBackColor = true;
@@ -105,27 +119,30 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 159);
+            this.label4.Location = new System.Drawing.Point(27, 196);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.Size = new System.Drawing.Size(59, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Schema";
             // 
             // loginSchemeBox1
             // 
             this.loginSchemeBox1.FormattingEnabled = true;
-            this.loginSchemeBox1.Location = new System.Drawing.Point(23, 175);
+            this.loginSchemeBox1.Location = new System.Drawing.Point(31, 215);
+            this.loginSchemeBox1.Margin = new System.Windows.Forms.Padding(4);
             this.loginSchemeBox1.Name = "loginSchemeBox1";
-            this.loginSchemeBox1.Size = new System.Drawing.Size(121, 21);
+            this.loginSchemeBox1.Size = new System.Drawing.Size(160, 24);
             this.loginSchemeBox1.TabIndex = 8;
             this.loginSchemeBox1.SelectedIndexChanged += new System.EventHandler(this.loginSchemeBox1_SelectedIndexChanged);
             // 
             // loginContinueButton1
             // 
             this.loginContinueButton1.Enabled = false;
-            this.loginContinueButton1.Location = new System.Drawing.Point(23, 203);
+            this.loginContinueButton1.Location = new System.Drawing.Point(31, 250);
+            this.loginContinueButton1.Margin = new System.Windows.Forms.Padding(4);
             this.loginContinueButton1.Name = "loginContinueButton1";
-            this.loginContinueButton1.Size = new System.Drawing.Size(75, 23);
+            this.loginContinueButton1.Size = new System.Drawing.Size(100, 28);
             this.loginContinueButton1.TabIndex = 9;
             this.loginContinueButton1.Text = "Continue";
             this.loginContinueButton1.UseVisualStyleBackColor = true;
@@ -133,6 +150,8 @@
             // 
             // loginPanel1
             // 
+            this.loginPanel1.Controls.Add(this.groupBox1);
+            this.loginPanel1.Controls.Add(this.loginPortNumeric1);
             this.loginPanel1.Controls.Add(this.loginErrorBox1);
             this.loginPanel1.Controls.Add(this.loginContinueButton1);
             this.loginPanel1.Controls.Add(this.loginSchemeBox1);
@@ -144,32 +163,104 @@
             this.loginPanel1.Controls.Add(this.label2);
             this.loginPanel1.Controls.Add(this.loginHostBox1);
             this.loginPanel1.Controls.Add(this.label1);
-            this.loginPanel1.Location = new System.Drawing.Point(12, 12);
+            this.loginPanel1.Location = new System.Drawing.Point(16, 15);
+            this.loginPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.loginPanel1.Name = "loginPanel1";
-            this.loginPanel1.Size = new System.Drawing.Size(260, 237);
+            this.loginPanel1.Size = new System.Drawing.Size(347, 292);
             this.loginPanel1.TabIndex = 11;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.loginIpRadio3);
+            this.groupBox1.Controls.Add(this.loginIpRadio2);
+            this.groupBox1.Controls.Add(this.loginIpRadio1);
+            this.groupBox1.Location = new System.Drawing.Point(206, 81);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(94, 101);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            // 
+            // loginIpRadio3
+            // 
+            this.loginIpRadio3.AutoSize = true;
+            this.loginIpRadio3.Location = new System.Drawing.Point(6, 76);
+            this.loginIpRadio3.Name = "loginIpRadio3";
+            this.loginIpRadio3.Size = new System.Drawing.Size(68, 21);
+            this.loginIpRadio3.TabIndex = 15;
+            this.loginIpRadio3.TabStop = true;
+            this.loginIpRadio3.Text = "FQDN";
+            this.loginIpRadio3.UseVisualStyleBackColor = true;
+            // 
+            // loginIpRadio2
+            // 
+            this.loginIpRadio2.AutoSize = true;
+            this.loginIpRadio2.Location = new System.Drawing.Point(6, 49);
+            this.loginIpRadio2.Name = "loginIpRadio2";
+            this.loginIpRadio2.Size = new System.Drawing.Size(56, 21);
+            this.loginIpRadio2.TabIndex = 14;
+            this.loginIpRadio2.Text = "IPv6";
+            this.loginIpRadio2.UseVisualStyleBackColor = true;
+            // 
+            // loginIpRadio1
+            // 
+            this.loginIpRadio1.AutoSize = true;
+            this.loginIpRadio1.Checked = true;
+            this.loginIpRadio1.Location = new System.Drawing.Point(6, 22);
+            this.loginIpRadio1.Name = "loginIpRadio1";
+            this.loginIpRadio1.Size = new System.Drawing.Size(56, 21);
+            this.loginIpRadio1.TabIndex = 13;
+            this.loginIpRadio1.TabStop = true;
+            this.loginIpRadio1.Text = "IPv4";
+            this.loginIpRadio1.UseVisualStyleBackColor = true;
+            // 
+            // loginPortNumeric1
+            // 
+            this.loginPortNumeric1.Location = new System.Drawing.Point(180, 31);
+            this.loginPortNumeric1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.loginPortNumeric1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.loginPortNumeric1.Name = "loginPortNumeric1";
+            this.loginPortNumeric1.Size = new System.Drawing.Size(120, 22);
+            this.loginPortNumeric1.TabIndex = 12;
+            this.loginPortNumeric1.Value = new decimal(new int[] {
+            3306,
+            0,
+            0,
+            0});
             // 
             // loginErrorBox1
             // 
             this.loginErrorBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.loginErrorBox1.Location = new System.Drawing.Point(181, 3);
+            this.loginErrorBox1.Location = new System.Drawing.Point(230, 199);
+            this.loginErrorBox1.Margin = new System.Windows.Forms.Padding(4);
             this.loginErrorBox1.Multiline = true;
             this.loginErrorBox1.Name = "loginErrorBox1";
             this.loginErrorBox1.ReadOnly = true;
-            this.loginErrorBox1.Size = new System.Drawing.Size(76, 64);
+            this.loginErrorBox1.Size = new System.Drawing.Size(101, 79);
             this.loginErrorBox1.TabIndex = 11;
             this.loginErrorBox1.Visible = false;
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(379, 321);
             this.Controls.Add(this.loginPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainWindow";
             this.Text = "MainWindow";
             this.loginPanel1.ResumeLayout(false);
             this.loginPanel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loginPortNumeric1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -188,5 +279,10 @@
         private System.Windows.Forms.Button loginContinueButton1;
         private System.Windows.Forms.Panel loginPanel1;
         private System.Windows.Forms.TextBox loginErrorBox1;
+        private System.Windows.Forms.NumericUpDown loginPortNumeric1;
+        private System.Windows.Forms.RadioButton loginIpRadio1;
+        private System.Windows.Forms.RadioButton loginIpRadio2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton loginIpRadio3;
     }
 }

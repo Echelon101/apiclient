@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Net;
 
 namespace DatabaseClient
 {
@@ -15,12 +16,12 @@ namespace DatabaseClient
         private string connectionString;
         public int LastError { get; set; }
 
-        public MySqlClient(string host, string uid, string pwd, string database)
+        public MySqlClient(IPAddress host, decimal port, string uid, string pwd, string database)
         {
-            this.connectionString = String.Format("server={0};uid={1};pwd={2};database={3}", host, uid, pwd, database);
+            this.connectionString = String.Format("server={0};prot={1};uid={2};pwd={3};database={4}", host,port, uid, pwd, database);
             this.MySqlConnection = new MySqlConnection(this.connectionString);
         }
-        public bool CheckConnection()
+        public bool CheckMySqlConnection()
         {
             bool success = true;
             try
@@ -34,6 +35,27 @@ namespace DatabaseClient
                 success = false;
             }
             return success;
+        }
+        public System.Net.NetworkInformation.PingReply CheckHostConnection(string host)
+        {
+            try
+            {
+                System.Net.NetworkInformation.Ping pingSender = new System.Net.NetworkInformation.Ping();
+                System.Net.NetworkInformation.PingReply reply = pingSender.Send(host);
+                if (reply.Status == System.Net.NetworkInformation.IPStatus.Success)
+                {
+                    return reply;
+                }
+                else
+                {
+                    return reply;
+                }
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+            
         }
 
         public List<string> GetSchemes()
