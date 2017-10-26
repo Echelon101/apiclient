@@ -1,6 +1,6 @@
 ﻿namespace VisualClient
 {
-    partial class MainWindow
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,14 +39,10 @@
             this.loginSchemeBox1 = new System.Windows.Forms.ComboBox();
             this.loginContinueButton1 = new System.Windows.Forms.Button();
             this.loginPanel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.loginIpRadio3 = new System.Windows.Forms.RadioButton();
-            this.loginIpRadio2 = new System.Windows.Forms.RadioButton();
-            this.loginIpRadio1 = new System.Windows.Forms.RadioButton();
             this.loginPortNumeric1 = new System.Windows.Forms.NumericUpDown();
             this.loginErrorBox1 = new System.Windows.Forms.TextBox();
+            this.loginCheckBox1 = new System.Windows.Forms.CheckBox();
             this.loginPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loginPortNumeric1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,7 +146,7 @@
             // 
             // loginPanel1
             // 
-            this.loginPanel1.Controls.Add(this.groupBox1);
+            this.loginPanel1.Controls.Add(this.loginCheckBox1);
             this.loginPanel1.Controls.Add(this.loginPortNumeric1);
             this.loginPanel1.Controls.Add(this.loginErrorBox1);
             this.loginPanel1.Controls.Add(this.loginContinueButton1);
@@ -168,50 +164,6 @@
             this.loginPanel1.Name = "loginPanel1";
             this.loginPanel1.Size = new System.Drawing.Size(347, 292);
             this.loginPanel1.TabIndex = 11;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.loginIpRadio3);
-            this.groupBox1.Controls.Add(this.loginIpRadio2);
-            this.groupBox1.Controls.Add(this.loginIpRadio1);
-            this.groupBox1.Location = new System.Drawing.Point(206, 81);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(94, 101);
-            this.groupBox1.TabIndex = 15;
-            this.groupBox1.TabStop = false;
-            // 
-            // loginIpRadio3
-            // 
-            this.loginIpRadio3.AutoSize = true;
-            this.loginIpRadio3.Location = new System.Drawing.Point(6, 76);
-            this.loginIpRadio3.Name = "loginIpRadio3";
-            this.loginIpRadio3.Size = new System.Drawing.Size(68, 21);
-            this.loginIpRadio3.TabIndex = 15;
-            this.loginIpRadio3.TabStop = true;
-            this.loginIpRadio3.Text = "FQDN";
-            this.loginIpRadio3.UseVisualStyleBackColor = true;
-            // 
-            // loginIpRadio2
-            // 
-            this.loginIpRadio2.AutoSize = true;
-            this.loginIpRadio2.Location = new System.Drawing.Point(6, 49);
-            this.loginIpRadio2.Name = "loginIpRadio2";
-            this.loginIpRadio2.Size = new System.Drawing.Size(56, 21);
-            this.loginIpRadio2.TabIndex = 14;
-            this.loginIpRadio2.Text = "IPv6";
-            this.loginIpRadio2.UseVisualStyleBackColor = true;
-            // 
-            // loginIpRadio1
-            // 
-            this.loginIpRadio1.AutoSize = true;
-            this.loginIpRadio1.Checked = true;
-            this.loginIpRadio1.Location = new System.Drawing.Point(6, 22);
-            this.loginIpRadio1.Name = "loginIpRadio1";
-            this.loginIpRadio1.Size = new System.Drawing.Size(56, 21);
-            this.loginIpRadio1.TabIndex = 13;
-            this.loginIpRadio1.TabStop = true;
-            this.loginIpRadio1.Text = "IPv4";
-            this.loginIpRadio1.UseVisualStyleBackColor = true;
             // 
             // loginPortNumeric1
             // 
@@ -247,19 +199,29 @@
             this.loginErrorBox1.TabIndex = 11;
             this.loginErrorBox1.Visible = false;
             // 
-            // MainWindow
+            // loginCheckBox1
+            // 
+            this.loginCheckBox1.AutoSize = true;
+            this.loginCheckBox1.Checked = true;
+            this.loginCheckBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.loginCheckBox1.Location = new System.Drawing.Point(180, 81);
+            this.loginCheckBox1.Name = "loginCheckBox1";
+            this.loginCheckBox1.Size = new System.Drawing.Size(149, 21);
+            this.loginCheckBox1.TabIndex = 13;
+            this.loginCheckBox1.Text = "Verbindung Prüfen";
+            this.loginCheckBox1.UseVisualStyleBackColor = true;
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 321);
             this.Controls.Add(this.loginPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "MainWindow";
+            this.Name = "LoginForm";
             this.Text = "MainWindow";
             this.loginPanel1.ResumeLayout(false);
             this.loginPanel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loginPortNumeric1)).EndInit();
             this.ResumeLayout(false);
 
@@ -280,9 +242,6 @@
         private System.Windows.Forms.Panel loginPanel1;
         private System.Windows.Forms.TextBox loginErrorBox1;
         private System.Windows.Forms.NumericUpDown loginPortNumeric1;
-        private System.Windows.Forms.RadioButton loginIpRadio1;
-        private System.Windows.Forms.RadioButton loginIpRadio2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton loginIpRadio3;
+        private System.Windows.Forms.CheckBox loginCheckBox1;
     }
 }
